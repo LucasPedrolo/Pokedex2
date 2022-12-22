@@ -25,6 +25,6 @@ class SecondViewController: UIViewController {
     }
     
     func alo(){
-        print("2")
+        
     }
 }
