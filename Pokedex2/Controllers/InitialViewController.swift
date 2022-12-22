@@ -10,7 +10,6 @@ import UIKit
 class InitialViewController: UIViewController {
     
 //    Montserrat
-    
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "pokedex")
@@ -36,6 +35,8 @@ class InitialViewController: UIViewController {
     
     lazy var myButton2: UIButton = {
         let button = UIButton(type: .custom)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.isUserInteractionEnabled = true
         button.backgroundColor = .black
         button.setTitle("Search", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
@@ -86,25 +87,20 @@ class InitialViewController: UIViewController {
     func goPokedex(){
         view.addSubview(myButton)
         
-        myButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 550, left: 100, bottom: 200, right:100), size: .init(width: 150, height: 100))
+        myButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 585, left: 100, bottom: 200, right:100), size: .init(width: 150, height: 100))
     }
     
     @objc func actionButton() {
-        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        
-        guard let profileViewController = mainStoryBoard.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController else {return}
-        
-        self.navigationController?.pushViewController(profileViewController, animated: true)
+        let pokedex = ProfileViewController()
+        self.navigationController?.pushViewController(pokedex, animated: true)
     }
     
     @objc func actionSearchPokemon() {
-        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        
-        guard let pokemonViewController = mainStoryBoard.instantiateViewController(withIdentifier: "PokemonViewController") as? PokemonViewController else {return}
-        
-        self.navigationController?.pushViewController(pokemonViewController, animated: true)
+        let search = PokemonViewController()
+        self.navigationController?.pushViewController(search, animated: true)
     }
-//
+
+    
 //        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
 //
 //        guard let profileViewController = mainStoryBoard.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController else {return}

@@ -12,20 +12,40 @@ class ProfileViewController: UIViewController {
     private let cellId = "cellId"
     var profiles: [Profile]?
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    lazy var layout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+        layout.itemSize = CGSize(width: 60, height: 60)
+        return layout
+    }()
+            
+    
+    lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView( frame: self.view.bounds, collectionViewLayout: layout)
+        return collectionView
+    }()
     
     var secondViewController = SecondViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(ProfileCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         pokemons()
+        setCollectionView()
         self.navigationItem.title = "Pokédex"
     }
     
+    
+    
+    func setCollectionView() {
+        view.addSubview(collectionView)
+        
+        collectionView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 0), size: .init(width: 150, height: 100))
+    }
     
     func pokemons(){
         
@@ -81,7 +101,6 @@ class ProfileViewController: UIViewController {
         
         profiles = [pokemon1, pokemon2, pokemon3, pokemon4, pokemon5, pokemon6, pokemon7, pokemon8, pokemon9, pokemon10, pokemon11, pokemon12, pokemon13, pokemon14, pokemon15, pokemon16, pokemon17, pokemon18, pokemon19, pokemon20, pokemon21, pokemon22, pokemon23, pokemon24, pokemon25]
     }
-    
 }
 
 
