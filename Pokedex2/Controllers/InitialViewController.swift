@@ -9,7 +9,6 @@ import UIKit
 
 class InitialViewController: UIViewController {
     
-//    Montserrat
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "pokedex")
@@ -48,7 +47,7 @@ class InitialViewController: UIViewController {
         button.addTarget(self, action: #selector(actionSearchPokemon), for: .touchUpInside)
         return button
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         goPokedex()
@@ -68,7 +67,7 @@ class InitialViewController: UIViewController {
         myTxtField.returnKeyType = UIReturnKeyType.done
         myTxtField.clearButtonMode = UITextField.ViewMode.whileEditing
         myTxtField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-            
+        
         self.view.addSubview(myTxtField)
     }
     
@@ -83,7 +82,7 @@ class InitialViewController: UIViewController {
         
         myButton2.anchor(top: nil, leading: myButton.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: myButton.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 200, right:0), size: .init(width: 150, height: myButton.frame.width))
     }
-
+    
     func goPokedex(){
         view.addSubview(myButton)
         
@@ -99,12 +98,4 @@ class InitialViewController: UIViewController {
         let search = PokemonViewController()
         self.navigationController?.pushViewController(search, animated: true)
     }
-
-    
-//        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//
-//        guard let profileViewController = mainStoryBoard.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController else {return}
-//
-//        self.navigationController?.pushViewController(profileViewController, animated: true)
-//    }
 }

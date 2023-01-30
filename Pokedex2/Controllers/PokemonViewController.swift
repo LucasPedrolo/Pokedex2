@@ -9,9 +9,10 @@ import UIKit
 
 class PokemonViewController: UIViewController {
 
+    var pokemonProfiles: [Profile]?
+    var profileViewController = ProfileViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 }
