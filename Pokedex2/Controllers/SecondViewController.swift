@@ -9,22 +9,18 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
-
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     func getIndexPath(index: Int) {
         print("Esse é o indice: ", index)
-        
-        if index == 0 {
-            alo()
-        }
+        alo(alou2: index)
     }
     
-    func alo(){
-        
+    func alo(alou2: Int){
+        if alou2 == 0 {
+            print(alou2)
+        }
     }
 }

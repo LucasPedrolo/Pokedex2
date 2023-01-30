@@ -7,16 +7,11 @@
 
 import UIKit
 
-class Profile: NSObject {
+struct Profile{
+    var id: Int?
     var name: String?
     var number: String?
     var image: String?
     var type: String?
-    
-    init(name: String?, number: String?, image: String?, type: String?) {
-        self.name = name
-        self.number = number
-        self.image = image
-        self.type = type
-    }
+    var pokeDetails: PokemonDetails?
 }

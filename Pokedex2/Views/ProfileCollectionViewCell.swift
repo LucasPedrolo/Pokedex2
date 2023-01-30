@@ -28,14 +28,12 @@ class ProfileCollectionViewCell: BaseCell {
         return view
     }()
     
-    
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "")
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-    
     
     lazy var lblName: UILabel = {
         let label = UILabel()
@@ -54,19 +52,18 @@ class ProfileCollectionViewCell: BaseCell {
         return label
     }()
     
-    
     func type1(type: String) {
         
         lazy var lblTypeG: UILabel = {
-                let label = UILabel()
-                label.text = "Grass"
-                label.textColor = .white
-                label.font = UIFont.systemFont(ofSize: 18)
-                label.backgroundColor = .green
-                label.textAlignment = .center
-                label.layer.masksToBounds = true
-                label.layer.cornerRadius = 5
-                return label
+            let label = UILabel()
+            label.text = "Grass"
+            label.textColor = .white
+            label.font = UIFont.systemFont(ofSize: 18)
+            label.backgroundColor = .green
+            label.textAlignment = .center
+            label.layer.masksToBounds = true
+            label.layer.cornerRadius = 5
+            return label
         }()
         
         lazy var lblTypeF: UILabel = {
@@ -177,8 +174,6 @@ class ProfileCollectionViewCell: BaseCell {
             return label
         }()
         
-        
-        
         container.addSubview(lblTypeF)
         container.addSubview(lblTypeG)
         container.addSubview(lblTypeP)
@@ -189,81 +184,63 @@ class ProfileCollectionViewCell: BaseCell {
         container.addSubview(lblTypeGround)
         container.addSubview(lblTypeW)
         container.addSubview(lblTypeB)
-    
         
         switch type {
-
-            case "GF":
-
-                lblTypeG.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
-                lblTypeF.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 60, bottom: 2, right: 0), size: .init(width: 55, height: 70))
-
-
-            case "F":
-                lblTypeF.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
-
-
-            case "G":
-                lblTypeG.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
-
-
-            case "W":
-                lblTypeW.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
-
-
-            case "P":
-                lblTypeP.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
-
-
-            case "E":
-                lblTypeE.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
-
-
-            case "N":
-                lblTypeN.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
-
-
-            case "Ground":
-                lblTypeGround.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: lblName.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 80, height: 70))
-
-
-            case "Psy":
-                lblTypePsy.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
-
-
-            case "Fly":
-                lblTypeFly.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
-
-
-            case "B":
-                lblTypeP.removeFromSuperview()
-                lblTypeB.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
-
-
-            case "GP":
-                lblTypeG.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
-                lblTypeP.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 60, bottom: 2, right: 0), size: .init(width: 55, height: 70))
-
-
-            case "FF":
-                lblTypeFly.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 60, bottom: 2, right: 0), size: .init(width: 55, height: 70))
-                lblTypeF.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
-
-
-            case "BFly":
-                lblTypeB.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
-                lblTypeFly.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 60, bottom: 2, right: 0), size: .init(width: 55, height: 70))
-
-
-            case "BP":
-                lblTypeB.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
-                lblTypeP.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 60, bottom: 2, right: 0), size: .init(width: 55, height: 70))
-
-
-            case "NFly":
-                lblTypeN.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
-                lblTypeFly.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 60, bottom: 2, right: 0), size: .init(width: 55, height: 70))
-
+        case "GF":
+            lblTypeG.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
+            lblTypeF.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 60, bottom: 2, right: 0), size: .init(width: 55, height: 70))
+            
+        case "F":
+            lblTypeF.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
+            
+        case "G":
+            lblTypeG.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
+            
+        case "W":
+            lblTypeW.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
+            
+        case "P":
+            lblTypeP.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
+            
+        case "E":
+            lblTypeE.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
+            
+        case "N":
+            lblTypeN.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
+            
+        case "Ground":
+            lblTypeGround.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: lblName.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 80, height: 70))
+            
+        case "Psy":
+            lblTypePsy.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
+            
+        case "Fly":
+            lblTypeFly.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
+            
+        case "B":
+            lblTypeP.removeFromSuperview()
+            lblTypeB.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
+            
+        case "GP":
+            lblTypeG.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
+            lblTypeP.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 60, bottom: 2, right: 0), size: .init(width: 55, height: 70))
+            
+        case "FF":
+            lblTypeFly.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 60, bottom: 2, right: 0), size: .init(width: 55, height: 70))
+            lblTypeF.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
+            
+        case "BFly":
+            lblTypeB.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
+            lblTypeFly.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 60, bottom: 2, right: 0), size: .init(width: 55, height: 70))
+            
+        case "BP":
+            lblTypeB.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
+            lblTypeP.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 60, bottom: 2, right: 0), size: .init(width: 55, height: 70))
+            
+        case "NFly":
+            lblTypeN.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 0, bottom: 2, right: 0), size: .init(width: 55, height: 70))
+            lblTypeFly.anchor(top: lblName.bottomAnchor, leading: lblName.leadingAnchor, bottom: imageView.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 60, bottom: 2, right: 0), size: .init(width: 55, height: 70))
+            
         default:
             print("deu errado")
         }
@@ -275,7 +252,6 @@ class ProfileCollectionViewCell: BaseCell {
         container.addSubview(lblName)
         container.addSubview(lblNumber)
     }
-    
     
     override func addConstraints() {
         container.anchor(top: safeAreaLayoutGuide.topAnchor, leading: safeAreaLayoutGuide.leadingAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, trailing: safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 10, left: 0, bottom: 10, right: 0), size: .init(width: frame.width, height: 80))
